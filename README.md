@@ -2,6 +2,9 @@
 
 A 54-key split ergonomic keyboard with analog joysticks, shift register matrix scanning, and a Seeeduino XIAO nRF52840 BLE microcontroller. Designed from scratch using Ergogen, KiCad, and ZMK firmware.
 
+![PCB Front](docs/images/pcb_front.png)
+![Schematic](docs/images/schematic.png)
+
 ## Features
 
 - 54 Kailh Choc V1 low-profile keys with hotswap sockets
