@@ -1,0 +1,183 @@
+units:
+  kx: cx
+  ky: cy
+  px: kx + 2
+  py: ky + 2
+points:
+  key: 
+    footprints:
+          choc_hotswap:
+            type: choc
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+                hotswap: true
+          choc:
+            type: choc
+            anchor:
+              rotate: 180
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+  zones:
+    matrix:
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        outer:
+          key.splay: -5
+          key.rotate: 1
+          rows.mod.skip: true
+          rows.bottom.skip: true
+        pinky:
+          key.splay: -5
+          key.rotate: 1
+          key.stagger: 22
+          rows.mod.skip: true
+        ring:
+          key.stagger: 5
+        middle:
+          key.stagger: -10
+          key.splay: -2.5
+        index:
+          key.stagger: -10
+          key.splay: -2.5
+        inner:
+          key.stagger:  -10
+          rows.mod.skip: true
+      rows:
+        mod:
+        bottom.shift: [-1ky, .75ky]
+        bottom.splay: -10
+        home:
+        top:
+        num:
+    thumbs:
+      key:
+        padding: 1ky
+        spread: -.31ky
+        stagger: -1.15ky
+        rotate: -15
+      columns:
+        space:
+        key:
+      rows:
+        cluster:
+          shift: [6.025ky, 3.5ky]
+  rotate: -15
+  mirror: &mirror
+    ref: matrix_inner_num
+    distance: 3.5kx
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      bound: true
+      size: [px, py]
+      expand: 2
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [kx-0.5,ky-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_top
+          shift: [43, 48]
+        - ref: mirror_matrix_inner_bottom
+          shift:  [105, 50]
+        - ref: matrix_inner_bottom
+          shift: [105, 50]
+        - ref: mirror_matrix_outer_top
+          shift: [43, 48]
+      expand: 8 
+      joints: beveled
+      fillet: 2
+  handrest:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_top
+          shift: [-30, -115]
+        - ref: mirror_matrix_inner_bottom
+          shift:  [100, 160]
+        - ref: matrix_inner_bottom
+          shift: [100, 160]
+        - ref: mirror_matrix_outer_top
+          shift: [-30, -115]
+      expand: 8 
+      joints: beveled
+      fillet: 2    
+  combo:
+    - name: board
+    - operation: add
+      name: raw
+  casecombohandrest:
+    - name: handrest
+    - operation: add
+      name: combo
+      expand: 3
+  preview: 
+    - name: combo
+    - operation: subtract
+      name: keys
+  final: 
+    - name: preview
+    - operation: stack
+      name: casecombohandrest
+cases:
+    hand_rest_case:
+      - what: outline
+        name: casecombohandrest
+        extrude: 3
+        operation: add
+pcbs:
+  carbon:
+    outlines:
+      main:
+        outline:
+          preview
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      xiao-ble:
+        what: xiao
+        params:
+          orientation: "up"
+        where:
+          ref.aggregate.parts: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [0,0]
+          rotate: -90
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref.aggregate.parts: [matrix_index_mod, mirror_matrix_index_mod]
+          shift: [0, -1]
+          rotate: -90
