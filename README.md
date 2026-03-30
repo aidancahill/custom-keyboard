@@ -115,6 +115,24 @@ Custom ZMK modules include:
 - **Case**: [OpenJSCAD](https://openjscad.xyz)
 - **Firmware**: [ZMK](https://zmk.dev)
 
+## Resources & Acknowledgments
+
+| Resource | Description |
+|----------|-------------|
+| [Ergogen Web UI](https://ergogen.cache.works/) | Browser-based Ergogen layout editor |
+| [Ergogen](https://github.com/ergogen/ergogen) | Ergonomic keyboard generator framework |
+| [Cantor Keyboard](https://github.com/diepala/cantor) | Split keyboard reference design |
+| [Triboard](https://github.com/tarneaux/triboard) | Split keyboard reference design |
+| [Kiai Split](https://github.com/makgyber/kiai-split) | Split keyboard reference design |
+| [Awesome Split Keyboards](https://github.com/diimdeep/awesome-split-keyboards) | Curated list of split keyboard projects |
+| [TOTEM Keyboard](https://github.com/GEIGEIGEIST/TOTEM) | Split keyboard with XIAO BLE support |
+| [FlatFootFox](https://flatfootfox.com/) | Ergogen and keyboard design tutorials |
+| [Getting Started with Keyboard PCBs](https://brianlow.notion.site/Getting-Started-5c18955a43044c5f98100212e83c19ef) | PCB design guide for keyboards |
+| [The Keyboard Matrix](https://www.dairequinlan.com/2020/12/the-keyboard-part-2-the-matrix/) | How keyboard matrices work |
+| [74HC595 Shift Register Tutorial](https://lastminuteengineers.com/74hc595-shift-register-arduino-tutorial) | 74HC595 wiring and code tutorial |
+| [74HC595 Keyboard Build](https://mehmedbasic.dk/post/74hc595-keyboard/) | Using shift registers in keyboards |
+| [Keyboard Layout Editor](https://www.keyboard-layout-editor.com/#/) | Visual keyboard layout designer |
+
 ## License
 
 MIT
