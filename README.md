@@ -2,6 +2,7 @@
 
 A 54-key split ergonomic keyboard with analog joysticks, shift register matrix scanning, and a Seeeduino XIAO nRF52840 BLE microcontroller. Designed from scratch using Ergogen, KiCad, and ZMK firmware.
 
+![Completed Build](docs/images/completed_build.jpeg)
 ![PCB Front](docs/images/pcb_front.png)
 ![Schematic](docs/images/schematic.png)
 
@@ -29,7 +30,7 @@ Left half:                              Right half:
 +---+---+---+---+---+---+---+      +---+---+---+---+---+---+---+
     | Z | X | C | V | B |              | N | M | , | . | / |
     +---+---+---+---+---+              +---+---+---+---+---+
-            |Ctl|Shf|Alt|              |Alt|Shf|Fn |
+            |Ctl|Shf|Alt|              |Fn |Shf|Alt|
             +---+---+---+              +---+---+---+
 
 Fn Layer:
@@ -100,7 +101,7 @@ The keyboard uses a 14-column × 5-row matrix:
 
 ## Firmware
 
-ZMK firmware lives in a separate repo: [custom-keyboard ZMK config](https://github.com/aidancahill/zmk-config/README.md)
+ZMK firmware lives in a separate repo: **[custom-keyboard ZMK firmware](https://github.com/aidancahill/custom-keyboard-zmk-firmware)**
 
 Custom ZMK modules include:
 

@@ -42,7 +42,7 @@ Order from JLCPCB or PCBWay. Upload the gerber zip from `pcb/gerbers/`. Minimum 
 
 | Item | File | Material | Settings |
 |------|------|----------|----------|
-| Case (with integrated 3mm bottom) | `case/stl/case_3mm_bottom.stl` | PETG or PLA | 50% infill, 0.2mm layer height |
+| Case (with integrated 3mm bottom) | `case/stl/hollow_case.stl` | PETG or PLA | 50% infill, 0.2mm layer height |
 
 Print yourself or order from PCBWay's 3D printing service.
 

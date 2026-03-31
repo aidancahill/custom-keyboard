@@ -2,9 +2,7 @@
 
 The ZMK firmware for this keyboard lives in a separate repository to enable GitHub Actions builds:
 
-**[custom-keyboard ZMK config](https://github.com/aidancahill/zmk-config)**
-
-> Replace `YOUR_USERNAME` with your GitHub username.
+**[custom-keyboard ZMK firmware](https://github.com/aidancahill/custom-keyboard-zmk-firmware)**
 
 ## Flashing
 
